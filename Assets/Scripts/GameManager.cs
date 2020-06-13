@@ -6,8 +6,9 @@ using UnityEngine;
 public class GameManager: MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject Player;
     public int score;
+    public GameObject Player;
+    public List<GameObject> enemyList;
 
     void Awake()
     {
@@ -22,5 +23,11 @@ public class GameManager: MonoBehaviour
             Debug.LogWarning("[GameManager] Attempted to create a second game manager:" + this.gameObject.name);
         }
     }
+
+    void Start()
+    {
+        enemyList = new List<GameObject>();
+    }
+
 }
 
